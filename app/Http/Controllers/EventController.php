@@ -4,30 +4,9 @@ namespace AgendaWeb\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use AgendaWeb\Event;
-use Calendar;
-class HomeController extends Controller
+class EventController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    // public function index()
-    // {
-
-    //     return view('home');
-    // }
+    //
     public function index()
     {
         $events = [];
@@ -49,6 +28,6 @@ class HomeController extends Controller
             }
         }
         $calendar = Calendar::addEvents($events);
-        return view( 'home', compact('calendar'));
+        return view('fullcalender', compact('calendar'));
     }
 }
