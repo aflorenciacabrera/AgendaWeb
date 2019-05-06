@@ -23,4 +23,9 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::get('/panel', 'HomeController@index');
+// mostrar las pantallas
+Route::get('/panel', 'PanelController@inicio');
+Route::get('/lista', 'PanelController@lista');
+Route::get('/nuevo', 'PanelController@nuevo');
+Route::get('/perfil', 'PanelController@perfil');
+Route::get('/contactos', 'PanelController@contactos');
